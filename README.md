@@ -9,7 +9,7 @@ Find the gaming buddy you lost long ago
 ## NPM Packages
 * Mongoose
 * bcrypt
-* Xxpress
+* Express
 * jsonwebtoken
 * Axios
 * Eslint (syntax-problems-code-style, none-of-these, none-of-these, airbnb, json)
