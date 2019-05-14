@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+# long-lost-friends
+Find the gaming buddy you lost long ago either on Steam, Xbox, or Playstation.
+THis is the readme
+=======
 # L0ng L0st Fri3nds
 Find the gaming buddy you lost long ago
   
@@ -20,3 +25,4 @@ Find the gaming buddy you lost long ago
 * Rishabh Goel
 * Steve Adamcsik
 
+>>>>>>> 558a54b8cfe0f1a614f1ac40f800c9f7fe7a3ae0
