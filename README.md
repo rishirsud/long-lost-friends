@@ -1,6 +1,5 @@
 # long-lost-friends
 Find the gaming buddy you lost long ago
-<<<<<<< HEAD
 
 
 ##npm packages
@@ -16,6 +15,7 @@ Jonah Karew
 
 
 
-=======
-THis is the readme
->>>>>>> 732d12c6c0036837fab98777c1e4433400538681
+## Technologies Used 
+- Node
+- Express
+- MongoDB 
