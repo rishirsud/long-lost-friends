@@ -34,12 +34,12 @@ const UserSchema = new Schema({
   firstName: {
     type: String,
     trim: true,
-    required: true
+    // required: true
   },
   lastName: {
     type: String,
     trim: true,
-    required: true
+    // required: true
   },
   fullName: {
     type: String
