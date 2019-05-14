@@ -6,7 +6,7 @@ const {
   getUserProfile
 } = require('../../controllers/user-controller');
 
-const withAuth = require('../../middleware/authentication');
+// const withAuth = require('../../middleware/authentication');
 
 // GET user profile '/api/user'
 router
@@ -22,10 +22,5 @@ router
 router
   .route('/login')
   .post(login);
-
-// Search for a user.
-router
-  .route("/search");
-  // .post()
 
 module.exports = router;
