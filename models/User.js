@@ -44,6 +44,9 @@ const UserSchema = new Schema({
   fullName: {
     type: String
   },
+  location: {
+    type: String
+  },
   steam: [],
   xbox: [],
   psn: []
