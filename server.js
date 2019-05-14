@@ -20,8 +20,8 @@ mongoose.connect(mongoUri, {
 });
 
 // set up routes
-const routes = require('./routes');
+// const routes = require('./routes');
 
-app.use(routes);
+// app.use(routes);
 
 app.listen(PORT, () => console.log(`🗺️ => now listening on http://localhost:${PORT}`));
