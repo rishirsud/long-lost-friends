@@ -9,6 +9,6 @@ const userRoutes = require("./user-routes")
 // router.use('/user', userRoutes);
 router.use('/all', allUsers);
 router.use('/search', searches);
-router.use("/register", userRoutes)
+router.use("/user", userRoutes)
 
 module.exports = router;

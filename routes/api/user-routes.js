@@ -16,12 +16,15 @@ router
   .route('/')
   .get( /*withAuth,*/ getUserProfile);
 
-// POST register user '/api/user/register'
+// POST register user
+
+// http://localhost:3000/api/user/register
 router
   .route('/register')
   .post(register);
 
-// POST login user '/api/user/login'
+// POST login user
+// http://localhost:3000/api/user/login
 router
   .route('/login')
   .post(login);
