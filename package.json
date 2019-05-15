@@ -2,9 +2,11 @@
   "name": "long-lost-friends",
   "version": "1.0.0",
   "description": "Find the gaming buddy you lost long ago",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "heroku-postbuild": "node seed.js"
   },
   "repository": {
     "type": "git",
