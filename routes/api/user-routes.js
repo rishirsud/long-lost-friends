@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const userHandler = require("../../controllers/controller")
+// const userHandler = require("../../controllers/controller")
 const withAuth = require("../../middleware/authentication")
 
 
@@ -14,7 +14,7 @@ const {
 // GET user profile '/api/user'
 router
   .route('/')
-  .get( /*withAuth,*/ getUserProfile);
+  .get( withAuth, getUserProfile);
 
 // POST register user
 
