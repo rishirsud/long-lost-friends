@@ -1,7 +1,7 @@
 
-// $("#platform-select-menu a").click(function () {
-//   $("#btn-platform-select").html($(this).html() + ' <span class="caret"></span>');
-// });
+$("#platform-select-menu a").click(function () {
+  $("#btn-platform-select").html($(this).html() + ' <span class="caret"></span>');
+});
 
 function signup(err) {
   err.preventDefault();
@@ -90,7 +90,26 @@ function getProfileData() {
     });
 }
 
+function searchPSN() {
+let search = $("#search-user").val().trim();
+
+console.log(search);
+
+  $.ajax({
+    url: '/api/search/psn?psn=' + search,
+    method: 'get',
+  })
+  .then(searches => {
+    console.log(searches);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+}
+
+
 $(document).ready(function() {
   $('#signup-form').on('submit', signup);
   $('#login-form').on('submit', login);
+  $('#search').on("click", searchPSN);
 });
