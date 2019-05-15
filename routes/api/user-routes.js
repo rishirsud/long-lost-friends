@@ -1,12 +1,13 @@
 const router = require('express').Router();
 const userHandler = require("../../controllers/controller")
+const withAuth = require("../../middleware/authentication")
 
 
 const {
   register,
   login,
   getUserProfile
-} = require('../../controllers/controller.js');
+} = require('../../controllers/user-controller.js');
 
 // const withAuth = require('../../middleware/authentication');
 
