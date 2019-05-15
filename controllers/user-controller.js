@@ -12,6 +12,7 @@ const secret = 'mysecretsshhhhh';
 // create function to register/create a new user
 // used when the POST route '/api/user/register' is hit
 const register = (req, res) => {
+  console.log(req.body)
   /* 
     {
       email: "alex@alex.com",
