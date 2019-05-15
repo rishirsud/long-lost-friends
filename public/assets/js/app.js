@@ -13,8 +13,8 @@ $("#platform-select-menu a").click(function () {
       $('#search').on("click", searchPSN);
       break;
 
-    case "Xbox":
-      $('#search').on("click", searcXbox);
+    case "XBL":
+      $('#search').on("click", searchXbox);
       break;
 
     case "Steam":
