@@ -2,10 +2,15 @@ const router = require('express').Router();
 
 
 const {
+  searchAllProfile,
   searchPSN,
   searchXbox,
   searchSteam
 } = require('../../controllers/search-controller');
+
+router
+  .route("/all")
+  .get(searchAllProfile);
 
 router
   .route("/psn")
