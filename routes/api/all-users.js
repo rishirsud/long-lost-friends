@@ -6,12 +6,14 @@ const router = require('express').Router();
 //   getUserProfile
 // } = require('../../controllers/user-controller');
 
-const allProfiles = require('../../controllers/all-controller');
+const {
+  getAllProfiles
+} = require('../../controllers/search-controller');
 
 // const withAuth = require('../../middleware/authentication');
 
 router
   .route("/")
-  .get(allProfiles);
+  .get(getAllProfiles);
 
 module.exports = router;
