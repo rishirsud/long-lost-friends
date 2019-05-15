@@ -7,11 +7,7 @@ const router = require('express').Router();
 // } = require('../../controllers/user-controller');
 
 const {
-  getAllProfiles,
-  searchAllProfile,
-  // searchPSN,
-  // searchXbox,
-  // searchSteam
+  getAllProfiles
 } = require('../../controllers/search-controller');
 
 // const withAuth = require('../../middleware/authentication');
@@ -19,21 +15,5 @@ const {
 router
   .route("/")
   .get(getAllProfiles);
-
-router
-  .route("/search")
-  .get(searchAllProfile);
-
-// router
-//   .route("/search/psn")
-//   .get(searchPSN);
-
-// router
-//   .route("/search/xbox")
-//   .get(searchXbox);
-
-// router
-//   .route("/search/steam")
-//   .get(searchSteam);
 
 module.exports = router;

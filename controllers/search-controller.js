@@ -28,24 +28,29 @@ const searchAllProfile = function (req, res) {
 
   let db = require("../models");
 
-  console.log("looking for all Bob");
+  let search = req.query;
+
+
+  console.log(searchPSN)
+
+  console.log(`looking for all`);
 
   db.User.find({
       $or: [{
           psn: {
-            $regex: 'bob',
+            $regex: search.psn,
             $options: "$i"
           }
         },
         {
           steam: {
-            $regex: 'bob',
+            $regex: search.steam,
             $options: '$i'
           }
         },
         {
           xbox: {
-            $regex: 'bob',
+            $regex: search.xbox,
             $options: '$i'
           }
         }
@@ -70,17 +75,19 @@ const searchAllProfile = function (req, res) {
 const searchPSN = function (req, res) {
 
   let db = require("../models");
+  let search = req.query.psn;
 
-  console.log("looking for psn Bob");
+  console.log(`looking for psn ${search}`);
+
+  // console.log(req.query);
 
   db.User.find({
       $or: [{
-          psn: {
-            $regex: 'croc', /* use req.query */
-            $options: "$i"
-          }
+        psn: {
+          $regex: search,
+          $options: "$i"
         }
-      ]
+      }]
     }, {
       firstName: 1,
       location: 1,
@@ -99,18 +106,19 @@ const searchPSN = function (req, res) {
 const searchXbox = function (req, res) {
 
   let db = require("../models");
+  let search = req.query.xbox;
 
-  console.log("looking for psn Bob");
+  console.log(`looking for psn ${search}`);
+
+  // console.log("looking for psn Bob");
 
   db.User.find({
-      $or: [
-        {
-          xbox: {
-            $regex: 'bob',
-            $options: '$i'
-          }
+      $or: [{
+        xbox: {
+          $regex: search,
+          $options: '$i'
         }
-      ]
+      }]
     }, {
       firstName: 1,
       location: 1,
@@ -130,17 +138,17 @@ const searchSteam = function (req, res) {
 
   let db = require("../models");
 
-  console.log("looking for psn Bob");
+  let search = req.query.steam;
+
+  console.log(`looking for psn ${search}`);
 
   db.User.find({
-      $or: [
-        {
-          steam: {
-            $regex: 'croc',
-            $options: '$i'
-          }
+      $or: [{
+        steam: {
+          $regex: search,
+          $options: '$i'
         }
-      ]
+      }]
     }, {
       firstName: 1,
       location: 1,
