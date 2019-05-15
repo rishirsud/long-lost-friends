@@ -1,7 +1,32 @@
-
 $("#platform-select-menu a").click(function () {
-  $("#btn-platform-select").html($(this).html() + ' <span class="caret"></span>');
+
+  let value = $(this).html()
+
+  $("#btn-platform-select").html(`${value} <span class="caret"></span>`);
+
+  let platformText = value.split(" ");
+  platformText = platformText[3].trim();
+  console.log(platformText);
+
+  switch (platformText) {
+    case "PSN":
+      $('#search').on("click", searchPSN);
+      break;
+
+    case "Xbox":
+      $('#search').on("click", searcXbox);
+      break;
+
+    case "Steam":
+      $('#search').on("click", searchSteam);
+      break;
+
+    default:
+      console.log("nothing selected");
+      break;
+  }
 });
+
 
 function signup(err) {
   err.preventDefault();
@@ -31,12 +56,12 @@ function signup(err) {
   console.log(signUpData);
 
   $.ajax({
-    url: '/api/user/register',
-    method: 'post',
-    data: signUpData,
-    contentType: false,
-    processData: false
-  })
+      url: '/api/user/register',
+      method: 'post',
+      data: signUpData,
+      contentType: false,
+      processData: false
+    })
     .then(res => {
       console.log(res);
     })
@@ -55,13 +80,16 @@ function login(err) {
     .val()
     .trim();
 
-  const loginData = { email, password };
+  const loginData = {
+    email,
+    password
+  };
 
   $.ajax({
-    url: '/api/user/login',
-    method: 'post',
-    data: loginData
-  })
+      url: '/api/user/login',
+      method: 'post',
+      data: loginData
+    })
     .then(token => {
       console.log(token);
       localStorage.setItem('accessToken', token);
@@ -76,12 +104,12 @@ function getProfileData() {
   const token = localStorage.getItem('accessToken');
 
   $.ajax({
-    url: '/api/user',
-    method: 'get',
-    headers: {
-      authorization: `Bearer ${token}`
-    }
-  })
+      url: '/api/user',
+      method: 'get',
+      headers: {
+        authorization: `Bearer ${token}`
+      }
+    })
     .then(userData => {
       console.log(userData);
     })
@@ -91,25 +119,58 @@ function getProfileData() {
 }
 
 function searchPSN() {
-let search = $("#search-user").val().trim();
+  let search = $("#search-user").val().trim();
 
-console.log(search);
+  console.log(search);
 
   $.ajax({
-    url: '/api/search/psn?psn=' + search,
-    method: 'get',
-  })
-  .then(searches => {
-    console.log(searches);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+      url: '/api/search/psn?psn=' + search,
+      method: 'get',
+    })
+    .then(searches => {
+      console.log(searches);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
+
+function searchXbox() {
+  let search = $("#search-user").val().trim();
+
+  console.log(search);
+
+  $.ajax({
+      url: '/api/search/xbox?xbox=' + search,
+      method: 'get',
+    })
+    .then(searches => {
+      console.log(searches);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
+
+function searchSteam() {
+  let search = $("#search-user").val().trim();
+
+  console.log(search);
+
+  $.ajax({
+      url: '/api/search/steam?steam=' + search,
+      method: 'get',
+    })
+    .then(searches => {
+      console.log(searches);
+    })
+    .catch(err => {
+      console.log(err);
+    });
 }
 
 
-$(document).ready(function() {
+$(document).ready(function () {
   $('#signup-form').on('submit', signup);
   $('#login-form').on('submit', login);
-  $('#search').on("click", searchPSN);
 });
