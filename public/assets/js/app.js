@@ -169,8 +169,19 @@ function searchSteam() {
     });
 }
 
+checkWindowSize = function () {
+  if ($(window).width() < 992) {
+    $('#nav-login').removeClass("dropdown-menu-right")
+  } else {
+    $('#nav-login').addClass("dropdown-menu-right")
+  }
+};
+
+
+
 
 $(document).ready(function () {
+  checkWindowSize();
   $('#signup-form').on('submit', signup);
   $('#login-form').on('submit', login);
 });
