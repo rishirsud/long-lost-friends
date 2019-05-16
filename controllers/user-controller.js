@@ -113,9 +113,42 @@ const getUserProfile = async (req,res) => {
   }
 }
 
+const updateProfile = async(req, res) => {
+  if(!req.body){
+    return res.status(400).send({
+      message: "Requested content is empty"
+    })
+  };
+
+  User.findByIdAndUpdate(req.params._id, {
+    firstName: req.body.firstName,
+    location: req.body.location
+
+  },
+  {new: true})
+  .then(User => {
+    if(!User){
+      return res.status(404).send({
+        message: "User not found with id" + req.params._id
+      });
+    }
+    res.send(User)
+  }).catch(err => {
+    if(err) console.log(err)
+  })
+
+
+
+  console.log(req.body)
+}
+
+
+
+
 // export our methods
 module.exports = {
   getUserProfile,
   login,
-  register
+  register,
+  updateProfile
 }
