@@ -6,14 +6,15 @@ const withAuth = require("../../middleware/authentication")
 const {
   register,
   login,
-  getUserProfile
+  getUserProfile,
+  updateProfile
 } = require('../../controllers/user-controller.js');
 
 // const withAuth = require('../../middleware/authentication');
 
-// GET user profile '/api/user'
+// GET user profile '/api/user/profile'
 router
-  .route('/')
+  .route('/profile')
   .get( withAuth, getUserProfile);
 
 // POST register user
@@ -28,5 +29,12 @@ router
 router
   .route('/login')
   .post(login);
+
+
+//update user profile
+router
+  .route("/update")
+  .put(updateProfile)
+
 
 module.exports = router;
