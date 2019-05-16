@@ -129,6 +129,7 @@ function searchPSN() {
     })
     .then(searches => {
       console.log(searches);
+      printSearch(searches, "psn")
     })
     .catch(err => {
       console.log(err);
@@ -146,6 +147,7 @@ function searchXbox() {
     })
     .then(searches => {
       console.log(searches);
+      printSearch(searches, "xbox")
     })
     .catch(err => {
       console.log(err);
@@ -163,6 +165,7 @@ function searchSteam() {
     })
     .then(searches => {
       console.log(searches);
+      printSearch(searches, "steam")
     })
     .catch(err => {
       console.log(err);
@@ -177,8 +180,18 @@ checkWindowSize = function () {
   }
 };
 
+const printSearch = (arr, plat)=> {
+  arr.forEach(results => {
+    console.log(results.firstName)
+    console.log(results.location)
+    // game ign 
+    results[plat].forEach(platform => {
+      console.log(platform)
+    });
 
-
+  })
+ 
+}
 
 $(document).ready(function () {
   checkWindowSize();
