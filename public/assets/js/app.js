@@ -218,7 +218,7 @@ const printSearch = (arr, plat) => {
     $card.append($cardBody);
 
     results[plat].forEach(platform => {
-      $cardBody.append($cardTitle.clone().text(`${platform}`));
+      $cardBody.append($cardTitle.clone().text(platform));
       // console.log(platform)
     });
     $cardBody.after($cardList);
