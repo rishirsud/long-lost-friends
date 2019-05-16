@@ -4,7 +4,6 @@ const router = require('express').Router();
 const allUsers = require('./all-users');
 const searches = require('./search-users');
 const userRoutes = require("./user-routes");
-const profileRoutes = require("./profile-routes")
 
 // prepend endpoints
 // router.use('/user', userRoutes);

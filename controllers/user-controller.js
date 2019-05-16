@@ -114,14 +114,16 @@ const getUserProfile = async (req,res) => {
 }
 
 const updateProfile = async(req, res) => {
-  if(!req.body.content){
+  if(!req.body){
     return res.status(400).send({
       message: "Requested content is empty"
     })
   };
 
   User.findByIdAndUpdate(req.params._id, {
-    User: req.body
+    firstName: req.body.firstName,
+    location: req.body.location
+
   },
   {new: true})
   .then(User => {
@@ -132,7 +134,7 @@ const updateProfile = async(req, res) => {
     }
     res.send(User)
   }).catch(err => {
-    if(err) console.log("you're fucked")
+    if(err) console.log(err)
   })
 
 
