@@ -70,8 +70,8 @@ function signup(err) {
     });
 }
 
-function login(err) {
-  err.preventDefault();
+function login(event) {
+  event.preventDefault();
 
   const email = $('#email-input-login')
     .val()
@@ -84,10 +84,12 @@ function login(err) {
     email,
     password
   };
+  console.log(loginData)
+  
 
   $.ajax({
       url: '/api/user/login',
-      method: 'post',
+      method: 'POST',
       data: loginData
     })
     .then(token => {
@@ -104,7 +106,7 @@ function getProfileData() {
   const token = localStorage.getItem('accessToken');
 
   $.ajax({
-      url: '/api/user',
+      url: '/api/user/profile',
       method: 'get',
       headers: {
         authorization: `Bearer ${token}`
@@ -183,5 +185,5 @@ checkWindowSize = function () {
 $(document).ready(function () {
   checkWindowSize();
   $('#signup-form').on('submit', signup);
-  $('#login-form').on('submit', login);
+  $('#signInButton').on('click', login);
 });
