@@ -1,10 +1,11 @@
 .wallpaper {
   background-image: url("/assets/images/wallpaper.jpg") !important;
   background-size: auto 100%;
+  box-shadow: 5px 5px 5px 5px #000;
 }
 
-#dropdownMenuOffset {
-  background-color: black;
+.bg-dark {
+  background-color:#000000!important;
 }
 
 #text {
