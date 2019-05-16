@@ -180,17 +180,53 @@ checkWindowSize = function () {
   }
 };
 
-const printSearch = (arr, plat)=> {
-  arr.forEach(results => {
-    console.log(results.firstName)
-    console.log(results.location)
-    // game ign 
-    results[plat].forEach(platform => {
-      console.log(platform)
-    });
 
+// <div class="card" style="width: 18rem;">
+//           <div class="card-body">
+//             <h5 class="card-title">.searches[plat]</h5>
+//           </div>
+//           <ul class="list-group list-group-flush">
+//             <li class="list-group-item">searches.name</li>
+//             <li class="list-group-item">searches.location</li>
+//           </ul>
+//           <div class="card-body">
+//             <a href="#" class="card-link">Profile</a>
+//           </div>
+//         </div> 
+
+const printSearch = (arr, plat) => {
+  let cardDisplay = $("#displayCards");
+
+  cardDisplay.empty();
+  arr.forEach(results => {
+
+    let col = $("<div class='col-lg-4 col-md-6 col-12' style='margin-top: 10px'>");
+    let $card = $("<div class='card'>");
+    let $cardBody = $("<div class='card-body'>");
+    let $cardTitle = $("<h5 class='card-title'>");
+    let $cardList = $("<ul class='list-group list-group-flush'>");
+    let $cardLi = $("<li class='list-group-item'>");
+
+
+    // console.log(results.firstName)
+    // console.log(results.location)
+    // game ign 
+
+
+    $card.append($cardBody);
+
+    results[plat].forEach(platform => {
+      $cardBody.append($cardTitle.clone().text(`${platform}`));
+      // console.log(platform)
+    });
+    $cardBody.after($cardList);
+    $cardList.append($cardLi.text(`Name: ${results.firstName}`));
+    $cardList.append($cardLi.clone().text(`Location: ${results.location}`));
+
+    col.append($card)
+    cardDisplay.append(col);
   })
- 
+
 }
 
 $(document).ready(function () {
