@@ -26,17 +26,41 @@ const userSeed2 = {
   firstName: "Steve",
   lastName: "Irwin",
   fullName: "Steve Irwin",
-  location: "United States",
+  location: "Australia",
   steam: ["CrocodileHunter"],
-  xbox: ["CrocodileHunter"],
+  xbox: ["steveHunter"],
   psn: ["CrocodileHunter", "KillerCroc", "Steve"],
+};
+
+const userSeed3 = {
+  email: "otherSteve@somewhere.com",
+  password: "hunter7",
+  firstName: "Steve",
+  lastName: "S",
+  fullName: "Steve S",
+  location: "United States",
+  steam: ["SteveSteve"],
+  xbox: ["SteveXboxSteve"],
+  psn: ["StevePSNSteve", "hunwiowoenfowe", "wfkwje fwkej f"],
+};
+
+const userSeed4 = {
+  email: "steve@somwhereelse.com",
+  password: "peanuts",
+  firstName: "Steve",
+  lastName: "B",
+  fullName: "Steve B",
+  location: "United States",
+  steam: ["SteveSTEAMwuebfiweubfiwb"],
+  xbox: ["SteveXboxeiwoienf"],
+  psn: ["wenwoein", "ownfowi", "kjwwofnwoe"],
 };
 
 // const sendStuff = [userSeed1, userSeed2]
 
 db.User
   .remove({})
-  .then(() => db.User.collection.insertMany([userSeed1, userSeed2]))
+  .then(() => db.User.collection.insertMany([userSeed1, userSeed2, userSeed3, userSeed4]))
   .then(data => {
     console.log(data.result.n + " user inserted!");
     process.exit(0);
