@@ -17,6 +17,7 @@ function showProfileInfo() {
       }
     })
     .then(userData => {
+      $("#dropdownMenuOffset").text("Logged In");
       // console.log(userData);
       let $firstName = $('#firstName');
       let $profileEmail = $('#profileEmail');
