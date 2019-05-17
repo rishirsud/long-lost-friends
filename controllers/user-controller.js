@@ -90,7 +90,7 @@ const login = async (req, res) => {
       });
 
       // respond with web token to the front end
-      res.status(200).json(token);
+      res.cookie('token', token, {httpOnly: true}).status(200).json(token);
 
       // if you want to use session cookies instead...
       // res.cookie('token', token, {httpOnly: true})
