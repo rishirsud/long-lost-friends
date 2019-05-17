@@ -120,13 +120,12 @@ const updateProfile = async(req, res) => {
     })
   };
 
-  User.findByIdAndUpdate(req.params._id, {
+  User.findByIdAndUpdate(req._id, {
     firstName: req.body.firstName,
     location: req.body.location,
     steam: req.body.steam, 
     xbox: req.body.xbox,
     psn: req.body.psn
-
   },
   {new: true})
   .then(User => {

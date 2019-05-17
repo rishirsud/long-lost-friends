@@ -33,7 +33,7 @@ router
 
 //update user profile
 router
-  .route("/update/:_id")
+  .route("/update/")
   .put(withAuth, updateProfile)
 
 

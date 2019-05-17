@@ -42,23 +42,36 @@ function showProfileInfo() {
 
 function updateProfile(updatedData){
 //holds user data
-var userData = {
+  const token = localStorage.getItem('accessToken');
 
 
- firstName: $("#firstName").val().trim(),
- location: $("#location").val().trim(),
- steam: $("#steamID").val().trim(),
- psn: $("#psnID").val().trim(),
- xbox: $("#xboxIDs").val().trim()
-}
- console.log(userData)
+ const firstName = $("#firstName").val().trim();
+ const location = $("#location").val().trim();
+ const steam = $("#steamID").val().trim();
+ const psn = $("#psnID").val().trim();
+ const xbox = $("#xboxIDs").val().trim();
+
+ 
 $.ajax({
   method: "PUT",
-  url: "/api/user/update/",
-  data: updatedData
+  url: `/api/user/update`,
+  data: {
+    firstName: firstName,
+    location: location,
+    steam: steam,
+    psn: psn,
+    xbox: xbox
+  },
+  headers: {
+    authorization: `Bearer ${token}`
+  }
 })
-
-
+.then(res => {
+  console.log(res)
+})
+.catch(err => {
+  console.log(err)
+})
 }
 
 
