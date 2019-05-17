@@ -13,3 +13,21 @@ $(document).ready(function () {
     $('.toast').toast('show');
   });
 });
+
+function getThisProfile() {
+  const token = localStorage.getItem('accessToken');
+
+  $.ajax({
+      url: '/api/user/profile',
+      method: 'GET',
+      headers: {
+        authorization: `${token}`
+      }
+    })
+    .then(res => {
+      console.log(res);
+    }).catch(err => {
+      console.log(err);
+    });
+}
+getThisProfile();
