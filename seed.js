@@ -61,10 +61,10 @@ mongoose.connect(
 db.User
   .remove({})
   // .then(() => db.User.collection.insertMany([userSeed1, userSeed2, userSeed3, userSeed4]))
-  // .then(data => {
-  //   console.log(data.result.n + " user inserted!");
-  //   process.exit(0);
-  // })
+  .then(data => {
+    // console.log(data.result.n + " user inserted!");
+    process.exit(0);
+  })
   .catch(err => {
     console.error(err);
     process.exit(1);
