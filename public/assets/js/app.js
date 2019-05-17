@@ -75,6 +75,24 @@ $("#platform-select-menu a").click(function () {
 // var isLoggedIn = true; 
 // console.log(isLoggedIn)
 
+function checkLoggedIn() {
+  const token = localStorage.getItem('accessToken');
+
+  $.ajax({
+      url: '/api/user/profile',
+      method: 'get',
+      headers: {
+        authorization: `Bearer ${token}`
+      }
+    })
+    .then(userData => {
+      $("#dropdownMenuOffset").text("Logged In");
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
+
 
 function login(event) {
   event.preventDefault();
@@ -103,7 +121,7 @@ function login(event) {
       localStorage.setItem('accessToken', token);
       $("#toProfile").attr('href', `/profile?token=${token}`)
       getProfileData();
-      $('.dropdown-toggle').dropdown('toggle')
+      $('#dropdownMenuOffset').dropdown('toggle')
       $("#dropdownMenuOffset").text("Logged In");
     })
     .catch(err => {
@@ -228,7 +246,6 @@ const printSearch = (arr, plat) => {
 
 $(document).ready(function () {
   checkWindowSize();
-  // $('#signup-form').on('submit', signup);
+  checkLoggedIn();
   $('#signInButton').on('click', login);
-  // $('#toProfile').on('click', navToProfile);
 });
