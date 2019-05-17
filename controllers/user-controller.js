@@ -12,7 +12,7 @@ const secret = 'mysecretsshhhhh';
 // create function to register/create a new user
 // used when the POST route '/api/user/register' is hit
 const register = (req, res) => {
-  console.log(req.body)
+  // console.log(req.body) /* THIS SHOWS PASSWORDS KEEP COMMENTED */
 
   // get information about user out of req.body
   const { email, password/*, firstName, lastName*/ } = req.body;
