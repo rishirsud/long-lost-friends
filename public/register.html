@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles/style.css">
   <link rel="shortcut icon" href="/assets/images/image.png">
-  <title>LFF</title>
+  <title>LFF - Register</title>
 </head>
 
 <body>
@@ -64,6 +64,7 @@
               </form>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/register">New around here? Sign up</a>
+              <!--<a class="dropdown-item" href="#">Forgot password?</a>-->
             </div>
           </div>
         </div>
@@ -83,57 +84,33 @@
 
   <div class="container" id="profileContainer">
     <div class="row">
-      <div class="col-lg-10 col-12 my-3 mx-auto">
+      <div class="col-lg-5 col-12 my-3 mx-auto">
         <!-- <div class="card" style="width: 18rem;"> -->
         <form action="">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Your Profile</h5>
-              <p class="card-text">Only information you input here will be visible. All fields are optional. If you want
-                to find your friends, it's suggested you fill some of them out.</p>
+              <h5 class="card-title text-center">Register an account</h5>
+              <hr>
+              <!-- <p class="card-text">Only information you input here will be visible. All fields are optional. If you want
+                to find your friends, it's suggested you fill some of them out.</p> -->
 
               <div class="row">
-                <div class="col-lg-4 col-12 mx-auto">
+                <div class="col-lg-12 col-12 mx-auto">
                   <div class="form-group">
                     <label for="email">Your Email </label>
-                    <input type="email" class="form-control" id="profileEmail" placeholder="Your Email" disabled>
+                    <input type="email" class="form-control" id="registerEmail" placeholder="" >
                   </div>
                   <div class="form-group">
-                    <label for="firstName">First Name* </label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="registerPassword" placeholder="">
                   </div>
-                  <div class="form-group">
-                    <label for="location">Enter your general location* </label>
-                    <input type="text" class="form-control" id="location" placeholder="Country/State">
-                  </div>
-                </div>
-
-
-                <div class="col-lg-4 col-12 mx-auto">
-                  <div class="form-group">
-                    <label for="steamID">Steam ID* </label>
-                    <input type="text" class="form-control" id="steamID" placeholder="Enter Steam ID: ">
-                  </div>
-                  <div class="form-group">
-                    <label for="psnID">PSN ID* </label>
-                    <input type="text" class="form-control" id="psnID" placeholder="Enter PSN ID">
-                  </div>
-                  <div class="form-group">
-                    <label for="xboxID">Xbox ID* </label>
-                    <input type="text" class="form-control" id="xboxIDs" placeholder="Enter Xbox ID">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col text-right">
-                  <small id="optionalInfo" class="form-text text-muted">* field is optional</small>
                 </div>
               </div>
             </div>
 
             <div class="row">
               <div class="col-12 my-2 text-center mx-auto">
-                <button id="saveProfile" class="btn btn-primary">Save</button>
+                <button id="submitRegister" type='button' class="btn btn-primary">Submit</button>
               </div>
             </div>
           </div>
@@ -162,7 +139,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="assets/js/profile.js"></script>
+  <script src="assets/js/register.js"></script>
 </body>
 
 </html>
