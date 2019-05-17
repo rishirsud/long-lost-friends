@@ -70,6 +70,12 @@ function signup(err) {
     });
 }
 
+
+//set variable for login
+// var isLoggedIn = true; 
+// console.log(isLoggedIn)
+
+
 function login(event) {
   event.preventDefault();
 
@@ -96,6 +102,7 @@ function login(event) {
       console.log(token);
       localStorage.setItem('accessToken', token);
       getProfileData();
+     
     })
     .catch(err => {
       console.log(err);

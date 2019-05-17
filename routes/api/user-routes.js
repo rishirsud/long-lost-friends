@@ -34,7 +34,7 @@ router
 //update user profile
 router
   .route("/update/:_id")
-  .put(updateProfile)
+  .put(withAuth, updateProfile)
 
 
 module.exports = router;
