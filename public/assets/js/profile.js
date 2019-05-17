@@ -49,7 +49,7 @@ function updateProfile(updatedData){
  const location = $("#location").val().trim();
  const steam = $("#steamID").val().trim();
  const psn = $("#psnID").val().trim();
- const xbox = $("#xboxIDs").val().trim();
+ const xbox = $("#xboxID").val().trim();
 
  
 $.ajax({
