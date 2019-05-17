@@ -12,7 +12,7 @@ Find the gaming buddy you lost long ago
 * Express
 * jsonwebtoken
 * Axios
-* Eslint (syntax-problems-code-style, none-of-these, none-of-these, airbnb, json)
+* Eslint 
 
 ## Contributors:
 * Jonah Karew
@@ -20,4 +20,4 @@ Find the gaming buddy you lost long ago
 * Rishabh Goel
 * Steve Adamcsik
 
-## [Deployed here] (https://long-lost-friends.herokuapp.com/)
+## [Deployed here](https://long-lost-friends.herokuapp.com/)
