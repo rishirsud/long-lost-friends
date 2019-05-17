@@ -1,11 +1,3 @@
-// function navToProfile() {
-//   console.log('doing the route')
-//   // $.ajax({
-//   //     url: '/profile',
-//   //     method: 'get'
-//   //   })
-// };
-
 $("#platform-select-menu a").click(function () {
 
   let value = $(this).html()
@@ -36,47 +28,47 @@ $("#platform-select-menu a").click(function () {
 });
 
 
-function signup(err) {
-  err.preventDefault();
+// function signup(err) {
+//   err.preventDefault();
 
-  const firstName = $('#firstname-input')
-    .val()
-    .trim();
-  const lastName = $('#lastname-input')
-    .val()
-    .trim();
-  const email = $('#email-input')
-    .val()
-    .trim();
-  const password = $('#password-input')
-    .val()
-    .trim();
+//   const firstName = $('#firstname-input')
+//     .val()
+//     .trim();
+//   const lastName = $('#lastname-input')
+//     .val()
+//     .trim();
+//   const email = $('#email-input')
+//     .val()
+//     .trim();
+//   const password = $('#password-input')
+//     .val()
+//     .trim();
 
-  // const photo = document.getElementById('profile-pic').files[0];
+//   // const photo = document.getElementById('profile-pic').files[0];
 
-  const signUpData = new FormData();
-  signUpData.append('firstName', firstName);
-  signUpData.append('lastName', lastName);
-  signUpData.append('email', email);
-  signUpData.append('password', password);
-  signUpData.append('profilePic', photo);
+//   const signUpData = new FormData();
+//   signUpData.append('firstName', firstName);
+//   signUpData.append('lastName', lastName);
+//   signUpData.append('email', email);
+//   signUpData.append('password', password);
+//   signUpData.append('profilePic', photo);
 
-  console.log(signUpData);
+//   console.log(signUpData);
 
-  $.ajax({
-      url: '/api/user/register',
-      method: 'post',
-      data: signUpData,
-      contentType: false,
-      processData: false
-    })
-    .then(res => {
-      console.log(res);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-}
+//   $.ajax({
+//       url: '/api/user/register',
+//       method: 'post',
+//       data: signUpData,
+//       contentType: false,
+//       processData: false
+//     })
+//     .then(res => {
+//       console.log(res);
+//     })
+//     .catch(err => {
+//       console.log(err);
+//     });
+// }
 
 function login(event) {
   event.preventDefault();
@@ -105,6 +97,8 @@ function login(event) {
       localStorage.setItem('accessToken', token);
       $("#toProfile").attr('href', `/profile?token=${token}`)
       getProfileData();
+      // $('.dropdown').dropdown('toggle')
+      $("#dropdownMenuOffset").text("Logged In");
     })
     .catch(err => {
       console.log(err);
@@ -228,7 +222,7 @@ const printSearch = (arr, plat) => {
 
 $(document).ready(function () {
   checkWindowSize();
-  $('#signup-form').on('submit', signup);
+  // $('#signup-form').on('submit', signup);
   $('#signInButton').on('click', login);
   // $('#toProfile').on('click', navToProfile);
 });

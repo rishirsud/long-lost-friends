@@ -22,7 +22,7 @@ const pageAuth = (req, res, next) => {
   }
 
   if (!token) {
-    res.status(301).redirect('/');
+    res.status(301).redirect('/register');
   } else {
     jwt.verify(token, secret, (err, decoded) => {
       if (err) {
