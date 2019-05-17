@@ -70,6 +70,12 @@ $("#platform-select-menu a").click(function () {
 //     });
 // }
 
+
+//set variable for login
+// var isLoggedIn = true; 
+// console.log(isLoggedIn)
+
+
 function login(event) {
   event.preventDefault();
 
