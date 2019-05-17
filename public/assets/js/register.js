@@ -33,8 +33,26 @@ function login(event) {
       localStorage.setItem('accessToken', token);
       $("#toProfile").attr('href', `/profile?token=${token}`)
       getProfileData();
-      // $('.dropdown').dropdown('toggle')
+      $('.dropdown-toggle').dropdown('toggle')
       $("#dropdownMenuOffset").text("Logged In");
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
+
+function getProfileData() {
+  const token = localStorage.getItem('accessToken');
+
+  $.ajax({
+      url: '/api/user/profile',
+      method: 'get',
+      headers: {
+        authorization: `Bearer ${token}`
+      }
+    })
+    .then(userData => {
+      console.log(userData);
     })
     .catch(err => {
       console.log(err);
@@ -58,6 +76,9 @@ registerUser = function (event) {
     })
     .then(res => {
       console.log(res);
+      // email.val("");
+      // password.val("")
+      $('.toast').toast('show');
     })
     .catch(err => {
       console.log(err);
@@ -69,5 +90,4 @@ $(document).ready(function () {
   checkWindowSize();
   $('#submitRegister').on('click', registerUser);
   $('#signInButton').on('click', login);
-
 });
