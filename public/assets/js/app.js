@@ -1,3 +1,11 @@
+// function navToProfile() {
+//   console.log('doing the route')
+//   // $.ajax({
+//   //     url: '/profile',
+//   //     method: 'get'
+//   //   })
+// };
+
 $("#platform-select-menu a").click(function () {
 
   let value = $(this).html()
@@ -91,7 +99,7 @@ function login(event) {
     password
   };
   console.log(loginData)
-  
+
 
   $.ajax({
       url: '/api/user/login',
@@ -101,6 +109,7 @@ function login(event) {
     .then(token => {
       console.log(token);
       localStorage.setItem('accessToken', token);
+      $("#toProfile").attr('href', `/profile?token=${token}`)
       getProfileData();
      
     })
@@ -189,20 +198,6 @@ checkWindowSize = function () {
   }
 };
 
-
-// <div class="card" style="width: 18rem;">
-//           <div class="card-body">
-//             <h5 class="card-title">.searches[plat]</h5>
-//           </div>
-//           <ul class="list-group list-group-flush">
-//             <li class="list-group-item">searches.name</li>
-//             <li class="list-group-item">searches.location</li>
-//           </ul>
-//           <div class="card-body">
-//             <a href="#" class="card-link">Profile</a>
-//           </div>
-//         </div> 
-
 const printSearch = (arr, plat) => {
   let cardDisplay = $("#displayCards");
 
@@ -242,4 +237,5 @@ $(document).ready(function () {
   checkWindowSize();
   $('#signup-form').on('submit', signup);
   $('#signInButton').on('click', login);
+  // $('#toProfile').on('click', navToProfile);
 });
