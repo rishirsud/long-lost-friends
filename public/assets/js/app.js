@@ -27,54 +27,6 @@ $("#platform-select-menu a").click(function () {
   }
 });
 
-
-// function signup(err) {
-//   err.preventDefault();
-
-//   const firstName = $('#firstname-input')
-//     .val()
-//     .trim();
-//   const lastName = $('#lastname-input')
-//     .val()
-//     .trim();
-//   const email = $('#email-input')
-//     .val()
-//     .trim();
-//   const password = $('#password-input')
-//     .val()
-//     .trim();
-
-//   // const photo = document.getElementById('profile-pic').files[0];
-
-//   const signUpData = new FormData();
-//   signUpData.append('firstName', firstName);
-//   signUpData.append('lastName', lastName);
-//   signUpData.append('email', email);
-//   signUpData.append('password', password);
-//   signUpData.append('profilePic', photo);
-
-//   console.log(signUpData);
-
-//   $.ajax({
-//       url: '/api/user/register',
-//       method: 'post',
-//       data: signUpData,
-//       contentType: false,
-//       processData: false
-//     })
-//     .then(res => {
-//       console.log(res);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// }
-
-
-//set variable for login
-// var isLoggedIn = true; 
-// console.log(isLoggedIn)
-
 function checkLoggedIn() {
   const token = localStorage.getItem('accessToken');
 
