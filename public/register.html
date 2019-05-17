@@ -44,13 +44,13 @@
             <div id="nav-login" class="dropdown-menu dropdown-menu-right">
               <form class="px-4 py-3">
                 <div class="form-group">
-                  <label for="exampleDropdownFormEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                  <label for="email-input-login">Email address</label>
+                  <input type="email" class="form-control" id="email-input-login"
                     placeholder="email@example.com">
                 </div>
                 <div class="form-group">
-                  <label for="exampleDropdownFormPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                  <label for="password-input-login">Password</label>
+                  <input type="password" class="form-control" id="password-input-login" placeholder="Password">
                 </div>
                 <!-- <div class="form-group">
                   <div class="form-check">
@@ -60,7 +60,7 @@
                     </label>
                   </div>
                 </div> -->
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="button" id="signInButton" class="btn btn-primary">Sign in</button>
               </form>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/register">New around here? Sign up</a>
@@ -125,20 +125,20 @@
     data-delay="2500" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
       <!-- <img src="..." class="rounded mr-2" alt="..."> -->
-      <strong class="mr-auto">Saved</strong>
-      <small class="text-muted">1 sec ago</small>
+      <strong class="mr-auto">Successful!</strong>
+      <!-- <small class="text-muted"></small> -->
       <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="toast-body">
-      Your information has been saved.
+      Your account has been created.
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.js"></script>
   <script src="assets/js/register.js"></script>
 </body>
 
