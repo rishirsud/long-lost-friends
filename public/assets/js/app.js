@@ -121,7 +121,7 @@ function login(event) {
       localStorage.setItem('accessToken', token);
       $("#toProfile").attr('href', `/profile?token=${token}`)
       getProfileData();
-      $('.dropdown-toggle').dropdown('toggle')
+      $('#dropdownMenuOffset').dropdown('toggle')
       $("#dropdownMenuOffset").text("Logged In");
     })
     .catch(err => {
