@@ -40,12 +40,52 @@ function showProfileInfo() {
 }
 
 
+function updateProfile(updatedData){
+//holds user data
+  const token = localStorage.getItem('accessToken');
+
+
+ const firstName = $("#firstName").val().trim();
+ const location = $("#location").val().trim();
+ const steam = $("#steamID").val().trim();
+ const psn = $("#psnID").val().trim();
+ const xbox = $("#xboxIDs").val().trim();
+
+ 
+$.ajax({
+  method: "PUT",
+  url: `/api/user/update`,
+  data: {
+    firstName: firstName,
+    location: location,
+    steam: steam,
+    psn: psn,
+    xbox: xbox
+  },
+  headers: {
+    authorization: `Bearer ${token}`
+  }
+})
+.then(res => {
+  console.log(res)
+})
+.catch(err => {
+  console.log(err)
+})
+}
+
+
+
+
+
 $(document).ready(function () {
   checkWindowSize();
   $('#saveProfile').on('click', function (event) {
     event.preventDefault();
     $('.toast').toast('show');
+    updateProfile()
   });
+  
   showProfileInfo();
 
 });

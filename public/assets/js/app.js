@@ -70,6 +70,12 @@ $("#platform-select-menu a").click(function () {
 //     });
 // }
 
+
+//set variable for login
+// var isLoggedIn = true; 
+// console.log(isLoggedIn)
+
+
 function login(event) {
   event.preventDefault();
 
@@ -97,7 +103,7 @@ function login(event) {
       localStorage.setItem('accessToken', token);
       $("#toProfile").attr('href', `/profile?token=${token}`)
       getProfileData();
-      // $('.dropdown').dropdown('toggle')
+      $('.dropdown-toggle').dropdown('toggle')
       $("#dropdownMenuOffset").text("Logged In");
     })
     .catch(err => {
