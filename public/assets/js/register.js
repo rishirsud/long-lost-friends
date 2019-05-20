@@ -20,7 +20,7 @@ function login(event) {
     email,
     password
   };
-  console.log(loginData)
+  // console.log(loginData)
 
 
   $.ajax({
