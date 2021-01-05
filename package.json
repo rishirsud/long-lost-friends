@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/rishirsud/long-lost-friends#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bcrypt": "^3.0.6",
     "cookie-parser": "^1.4.4",
     "eslint": "^5.16.0",
